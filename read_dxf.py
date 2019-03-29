@@ -68,13 +68,16 @@ for f in files:
             # If the svg consists of only one path remove it
             os.remove(svg_filename)
     pbar.finish()
+print "********** OK **********"
 
 if args.convert_to_png:
     print "---------- Conversion des fichiers svg en png ----------"
     os.system("mogrify -resize 200x200 -gravity center -extent 200x200^ -format png out/*f.svg")
+    print "********** OK **********"
 if args.delete_svg:
     print "---------- Suppression des fichiers svg ----------"
     for o in obj_with_content:
         os.remove(o)
     for o in obj_with_content_fat:
         os.remove(o)
+    print "********** OK **********"
