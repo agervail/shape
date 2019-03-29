@@ -11,6 +11,7 @@ run-bash:
 	docker exec -it $(CONTAINER_NAME) /bin/bash
 
 generate-png:
+	mkdir -p out
 	docker exec -it $(CONTAINER_NAME) python read_dxf.py --convert-to-png --delete-svg
 
 stop-image:
